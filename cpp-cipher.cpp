@@ -13,6 +13,13 @@ using namespace std;
 #define BOLD_WHITE   "\033[1;37m"
 #define RESET   "\033[0m"
 
+/*
+        Author : William Steven \n;
+        Definition : Classic ceaser cypher tool \n;
+        Note : Fork kor korle || copy korle tor মারে চুদি 🖕\n;
+
+*/
+
 void banner() {
     cout << BOLD_CYAN << "\n\n                               _       __                 \n";
     cout << "  _________  ____        _____(_)___  / /_  ___  _____    \n";
@@ -60,7 +67,7 @@ int decryption(string sentence){
     
     int shift;
     
-    cout<< BOLD_GREEN <<"\n1) Custom shift number\n2) Test all\n" << RESET <<endl;
+    cout<< BOLD_GREEN <<"\n1) Custom shift number\n2) Test all (default)\n" << RESET <<endl;
     int choise;
     cout<< BOLD_WHITE << "Enter decryption mathod number : ";
     cin>> choise;
@@ -68,17 +75,17 @@ int decryption(string sentence){
         cout << BOLD_WHITE << "Enter shift number: ";
         cin >> shift;
         
-        cout << BOLD_CYAN << "\nCipher text : ";
+        cout << BOLD_CYAN << "\nPlain text : ";
 
         for (char c : sentence) {
         
             if (c >= 'A' && c <= 'Z') {
-                c = ((c - 'A' + shift) % 26) + 'A';
+                c = ((c - 'A' + shift + 25) % 26) + 'A';
                 cout << c;
             }
         
             else if (c >= 'a' && c <= 'z') {
-                c = ((c - 'a' + shift) % 26) + 'a';
+                c = ((c - 'a' + shift + 25) % 26) + 'a';
                 cout << c;
             }
             else {
@@ -94,7 +101,7 @@ int decryption(string sentence){
         int x = 1;
         for(shift = 25 ; shift > 0 ; shift--){
             
-            cout << BOLD_CYAN << "Cipher text : ";
+            cout << BOLD_CYAN << "Plain text : ";
 
         for (char c : sentence) {
         
@@ -118,10 +125,9 @@ int decryption(string sentence){
             
         }
         
-    }else{
-        
+    }else {
+        cout << BOLD_RED << "Invalid option." << RESET << endl;
     }
-    
     
     
     return 0;
@@ -129,47 +135,66 @@ int decryption(string sentence){
 }
 
 
+int main() {
+    system("clear");
+    int opt;
+    bool runAgain = true;
+    
+    while (runAgain) {
+        banner();
 
+        cout << BOLD_GREEN << "1) Encryption" << endl << "2) Decryption" << RESET << endl;
+        cout << BOLD_WHITE << "\nOption number : ";
+        cin >> opt;
 
+        if (opt == 1) {
+            system("clear");
+            banner();
 
+            string text;
+            cout << BOLD_WHITE << "Enter your text here : ";
+            cin.ignore();
+            getline(cin, text);
+            encryption(text);
 
-int main(){
-	
-	banner();
-	
-	cout << BOLD_GREEN << "1) Encryption" <<endl << "2) Decryption" << RESET <<endl;
-	int opt;	
-	cout<< BOLD_WHITE << "\nOption number : ";
-	cin>> opt;
-	
-	if(opt == 1){
-	    
-	    system("clear");
-	    
-	    banner();
-	    
-	    string text;
-	    cout << BOLD_WHITE << "Enter your text here : ";
-	    cin.ignore();
-	    getline(cin,text);
-	    encryption(text);
-	    
-	}else if(opt == 2){
-	    
-	    system("clear");
-	    
-	    banner();
-	    
-	    string text;
-	    cout << BOLD_WHITE << "Enter encrypted text here : ";
-	    cin.ignore();
-	    getline(cin,text);
-	    decryption(text);
-	    
-	}else{
-	    cout << BOLD_RED << "rong option";
-	}
-	
-	return 0;
-	
+        } else if (opt == 2) {
+            system("clear");
+            banner();
+
+            string text;
+            cout << BOLD_WHITE << "Enter encrypted text here : ";
+            cin.ignore();
+            getline(cin, text);
+            decryption(text);
+
+        } else {
+            cout << BOLD_RED << "Wrong option" << RESET << endl;
+            continue;
+        }
+
+        int YorN;
+        cout << BOLD_YELLOW << "\nDo you want to use this script one more time ??\n" 
+             << BOLD_GREEN << "\n1) Yes\n2) No\n" << RESET;
+        cout << BOLD_WHITE << "\nEnter the value of yes or no (1/2) : ";
+        cin >> YorN;
+
+        if (YorN == 1) {
+            runAgain = true;
+            system("clear");
+        } else if (YorN == 2) {
+            cout << BOLD_GREEN << "\nGood bye 👋\nExiting !" << RESET <<endl;
+            runAgain = false;
+        } else {
+            cout << BOLD_RED << "Unknown option\nExiting !" << RESET << endl;
+            runAgain = false;
+        }
+    }
+
+    return 0;
 }
+
+/*
+    last message : বাহ চুদির ভাই 🙂
+                   তুই তাও copy করবি ??
+
+*/
