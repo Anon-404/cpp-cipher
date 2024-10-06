@@ -51,20 +51,87 @@ int encryption(string sentence) {
  
 }
 
+
+
+
+
+
 int decryption(string sentence){
     
     int shift;
-    cout<< "Enter shift number : ";
-    cin>> shift;
-    for(char c : sentence){
-        int a = c + shift;
-        char b = a;
-        cout<< b;
+    
+    cout<< BOLD_GREEN <<"\n1) Custom shift number\n2) Test all\n" << RESET <<endl;
+    int choise;
+    cout<< BOLD_WHITE << "Enter decryption mathod number : ";
+    cin>> choise;
+    if(choise == 1){
+        cout << BOLD_WHITE << "Enter shift number: ";
+        cin >> shift;
+        
+        cout << BOLD_CYAN << "\nCipher text : ";
+
+        for (char c : sentence) {
+        
+            if (c >= 'A' && c <= 'Z') {
+                c = ((c - 'A' + shift) % 26) + 'A';
+                cout << c;
+            }
+        
+            else if (c >= 'a' && c <= 'z') {
+                c = ((c - 'a' + shift) % 26) + 'a';
+                cout << c;
+            }
+            else {
+                cout << c;
+            }
+        }
+    
+        cout << RESET << "\n";
+    
+    }else if(choise == 2){
+        
+        cout<< "\n";
+        int x = 1;
+        for(shift = 25 ; shift > 0 ; shift--){
+            
+            cout << BOLD_CYAN << "Cipher text : ";
+
+        for (char c : sentence) {
+        
+            if (c >= 'A' && c <= 'Z') {
+                c = ((c - 'A' + shift) % 26) + 'A';
+                cout << c;
+            }
+        
+            else if (c >= 'a' && c <= 'z') {
+                c = ((c - 'a' + shift) % 26) + 'a';
+                cout << c;
+            }
+            else {
+                cout << c;
+            }
+        }
+        
+        cout << BOLD_BLUE << " ( Shift " << x << " )";
+        cout << RESET << "\n";
+        x++;
+            
+        }
+        
+    }else{
+        
     }
-    //cout << sentence;
+    
+    
+    
     return 0;
 
 }
+
+
+
+
+
 
 int main(){
 	
@@ -89,11 +156,14 @@ int main(){
 	    
 	}else if(opt == 2){
 	    
+	    system("clear");
+	    
 	    banner();
 	    
 	    string text;
 	    cout << BOLD_WHITE << "Enter encrypted text here : ";
-	    cin >> text;
+	    cin.ignore();
+	    getline(cin,text);
 	    decryption(text);
 	    
 	}else{
