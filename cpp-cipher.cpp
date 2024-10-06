@@ -71,29 +71,29 @@ int decryption(string sentence){
     int choise;
     cout<< BOLD_WHITE << "Enter decryption mathod number : ";
     cin>> choise;
-    if(choise == 1){
+        if (choise == 1) {
+        int num;
         cout << BOLD_WHITE << "Enter shift number: ";
-        cin >> shift;
-        
-        cout << BOLD_CYAN << "\nPlain text : ";
+        cin >> num;
+
+        cout << "\n";
+        cout << BOLD_CYAN << "Plain text: ";
 
         for (char c : sentence) {
-        
             if (c >= 'A' && c <= 'Z') {
-                c = ((c - 'A' + shift + 25) % 26) + 'A';
+                
+                c = ((c - 'A' - num + 26) % 26) + 'A';
                 cout << c;
-            }
-        
-            else if (c >= 'a' && c <= 'z') {
-                c = ((c - 'a' + shift + 25) % 26) + 'a';
+            } else if (c >= 'a' && c <= 'z') {
+                
+                c = ((c - 'a' - num + 26) % 26) + 'a';
                 cout << c;
-            }
-            else {
+            } else {
                 cout << c;
             }
         }
-    
-        cout << RESET << "\n";
+
+        cout << BOLD_BLUE << " (Shift " << num << ")\n" << RESET;
     
     }else if(choise == 2){
         
@@ -194,7 +194,10 @@ int main() {
 }
 
 /*
+
+
     last message : বাহ চুদির ভাই 🙂
                    তুই তাও copy করবি ??
+
 
 */
