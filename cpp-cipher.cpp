@@ -68,10 +68,10 @@ int decryption(string sentence){
     int shift;
     
     cout<< BOLD_GREEN <<"\n1) Custom shift number\n2) Test all (default)\n" << RESET <<endl;
-    int choise;
+    int choice;
     cout<< BOLD_WHITE << "Enter decryption mathod number : ";
-    cin>> choise;
-        if (choise == 1) {
+    cin>> choice;
+        if (choice== 1) {
         int num;
         cout << BOLD_WHITE << "Enter shift number: ";
         cin >> num;
@@ -95,7 +95,7 @@ int decryption(string sentence){
 
         cout << BOLD_BLUE << " (Shift " << num << ")\n" << RESET;
     
-    }else if(choise == 2){
+    }else if(choice== 2){
         
         cout<< "\n";
         int x = 1;
