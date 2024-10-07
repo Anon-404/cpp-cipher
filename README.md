@@ -1,64 +1,73 @@
 
-##cpp-cipher 🔐
+# cpp-cipher 🔐
 
 Classic Caesar Cipher Encryption and Decryption Tool
 Written in C++
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Anon-404/My-assets/main/cpp-cipher/cpp-cipher.jpg" alt="cpp-cipher Logo" width="200"/>
-</div>Features ✨
+## Features ✨
 
-🔒 Encrypt Text: Securely encrypts your text using the Caesar Cipher method.
+- 🔒 Encrypt Text: Securely encrypts your text using the Caesar Cipher method.
 
-🔓 Decrypt Text: Decrypts text using a custom shift or tests all possible shifts.
+- 🔓 Decrypt Text: Decrypts text using a custom shift or tests all possible shifts.
 
-🛠️ Customizable Shift Value: Choose a specific shift value for encryption and decryption.
+- 🛠️ Customizable Shift Value: Choose a specific shift value for encryption and decryption.
 
-🔍 Test All Shifts: Automatically tests all possible shifts when decrypting.
+- 🔍 Test All Shifts: Automatically tests all possible shifts when decrypting.
 
-📖 User-Friendly Interface: Easy-to-use command-line interface.
+- 📖 User-Friendly Interface: Easy-to-use command-line interface.
 
 
-Installation 🛠️
+## Installation 🛠️
 
-Step 1: Install a C++ Compiler
+#### Step 1: Install a C++ Compiler
 
 Ensure you have g++ or any C++ compiler installed on your system.
 
-Arch-based Linux:
+- **Arch-based Linux:**
 
+```bash
 sudo pacman -S gcc
+```
 
-Debian-based Linux:
+- **Debian-based Linux:**
 
+```bash
 sudo apt install g++ -y
+```
 
-Fedora:
+- **Fedora:**
 
+```bash
 sudo dnf install gcc-c++
+```
 
-Termux:
+- **Termux:**
 
+```bash
 pkg install clang -y
+```
 
+#### Step 2: Clone and Build the Project
 
-Step 2: Clone and Build the Project
+- **For Linux/Termux:**
 
-For Linux/Termux:
-
+```bash
 git clone https://github.com/Anon-404/cpp-cipher
 cd cpp-cipher
-g++ -o cpp-cipher main.cpp
+g++ cpp-cipher.cpp -o cpp-cipher -lstdc++
+```
 
 Now, you are ready to use the cpp-cipher tool!
 
-Usage 🧑‍💻
+## Usage 🧑‍💻
 
 Run the cpp-cipher tool using the following syntax:
 
+```bash
 ./cpp-cipher
+```
 
-Main Options:
+## Main Options:
 
 Encryption
 🔐 Encrypt Text
