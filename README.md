@@ -69,36 +69,47 @@ Run the cpp-cipher tool using the following syntax:
 
 ## Main Options:
 
-Encryption
-🔐 Encrypt Text
+### Encryption
+#### 🔐 Encrypt Text
 Select the "Encryption" option to encrypt your plaintext with a specified shift.
 
-Decryption
-🔓 Decrypt Text
+### Decryption
+#### 🔓 Decrypt Text
 Choose the "Decryption" option to decrypt ciphertext either by using a custom shift or testing all possible shifts.
 
 
-Example:
+### Example:
 
-Encryption:
+#### Encryption:
+
+```bash
 
 ./cpp-cipher
 1) Encryption
 Enter your text here: hello world
 Enter shift number: 3
 
-Output: khoor zruog
+```
 
-Decryption:
+#### Output:
+```bash
+khoor zruog
+```
 
+### Decryption:
+```bash
 ./cpp-cipher
 2) Decryption
 Enter encrypted text here: khoor zruog
 1) Custom shift number
 Enter shift number: 3
+```
 
-Output: hello world
+#### Output: 
+```bash
+hello world
+```
 
-Contributions 🤝
+### Contributions 🤝
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
